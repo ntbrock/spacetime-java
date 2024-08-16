@@ -37,7 +37,7 @@ Describe possible Web technologies to use for the conversion
 
 Found that in spacetime-java the UI and Physics are tightly coupled.
 
-Could we leverage UI / GPT technologies to facilitae the 
+Could we leverage UI / GPT technologies to facilitate the conversion
 
 
 Map out the Fall 2024 Timeline and Student tasks
@@ -68,6 +68,10 @@ Map out the Fall 2024 Timeline and Student tasks
 	Start with The simplest scenario and do a "technology demo". 
 
 
+## Milestone Idea
+
+
+
 Scenario: Trip to Alpha.sce
 
 Build as a technonlogy demonstrtion
@@ -86,14 +90,7 @@ Build as a technonlogy demonstrtion
 
 Connected: Java version for relatavistics January 2025  use in Morganton.
 
-
-
-
-
-
-
-
-
+https://observablehq.com/@mbostock/genuary-2022-3
 
 
 
