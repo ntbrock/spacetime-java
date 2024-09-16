@@ -1,6 +1,6 @@
-Trip to Alpha.sce discussion.
+## Trip to Alpha.sce Discussion
 
-
+### Discussion 1 on 2024-09-06 
 
 Vertical Lines represent events
 
@@ -59,6 +59,65 @@ S1 happens to be simultaenous when the rocket reaches alpha according tot herock
 
 Nothing to do with each other.  
 No problem if we disagree.
+
+
+
+## Discussion 2 on 2024-09-13
+
+THe inbound rocket refrence frame is different thant he outbound reference frame
+
+measureing at an instance of time in tehg round refernc frame.
+
+At S2, Earth reads 8.08, the rocet reads 4.04
+
+Jumped to rocket frame.
+
+Al the inboudn rocket rlocks read 404.
+
+The 
+S2 = Simultanous with turning event in the inbound frame
+
+From rocket frame, earth clock reads 8.08
+Rocket reads = 2.31
+
+S2 happened simulateous with the beginnign fo the retrun trip.
+Two different events and they're simulateous from the rockets return trip.
+
+IUf you were to jump back to earths' reference frame.
+the rocket is not at alpha.
+
+How the time is perceived? 
+This is not Time dilation as the 
+
+Bennett - showing the rocket at th place in earth's refreence frame 
+that's not the same place it's in the rocket's reference frame.
+
+The big lesson of the first Lab 1.
+
+Light takes time to get to places.
+
+Time of events - at the same time bnuit int he train the first one hapened at the right most
+left one 
+
+How can two events in one refrence frame not be simulatenoius in another frame?
+every reference frame has to measure time using a system of clocks, not just one clock.
+
+different clock at efevery position.
+Synchronizet he locks,t he only way we know they're working correctly.
+
+Another reference frame in motion, 
+From another ference frame, they'll say my clocks are not synrchronized. 
+
+Earth and alpha are not synchronzied. 
+earthy's clocks can't be synchronied.
+
+S2 = someoen stops the earth clock at 8.08, 
+in the rockets ref frame at the same instance, the rocket is about to depart.
+
+
+3 different reference frames, outbound rocket, inbound rocket.
+
+
 
 
 
