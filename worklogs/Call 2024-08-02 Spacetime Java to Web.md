@@ -70,8 +70,6 @@ Map out the Fall 2024 Timeline and Student tasks
 
 ## Milestone Idea
 
-
-
 Scenario: Trip to Alpha.sce
 
 Build as a technonlogy demonstrtion
