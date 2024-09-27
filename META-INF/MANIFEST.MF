@@ -1,0 +1,5 @@
+Manifest-Version: 1.0
+Created-By: Maven Archiver 3.6.1
+Build-Jdk-Spec: 11
+Main-Class: spacetime.SpacetimeApp
+
