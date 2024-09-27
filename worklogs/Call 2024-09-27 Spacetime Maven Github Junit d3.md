@@ -1,10 +1,13 @@
-Call 2024-09-27
+Call 2024-09-27 Spacetime Maven Github JUnit d3
 
 
 ## Next Actions
  
-* Dr. Bennett> Add Spacetime diagrams into the Trainground Lab 1 + 2  Google Docs
- 
+* Dr. Bennett> Consider Adding Spacetime diagrams into the Trainground Lab 1 + 2  Google Docs
+
+	Gathering ideas, the things we've gone through together with train ground.
+	Screenshots from Spacetime diagrams.
+
 * Taylor> Get my JUnit test working + Push pom.xml
  
 * Justin + Brandon> Try a JUnit test in IntelliJ. 
@@ -13,7 +16,6 @@ Reference: https://symflower.com/en/company/blog/2023/how-to-write-junit-test-ca
  
 * Together Next Week> Review Spacetime code and see where we could write out a CSV file that has all the values of all the events.
  
-
 
 ## Taylor Demonstrations on 9/27
 

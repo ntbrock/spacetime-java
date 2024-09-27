@@ -50,3 +50,41 @@ Artifact download URL: https://github.com/ntbrock/spacetime-java/actions/runs/11
 Action environment variables
 https://docs.github.com/en/actions/writing-workflows/choosing-what-your-workflow-does/accessing-contextual-information-about-workflow-runs#job-context
 
+
+## Changign Gears d3 demo
+
+https://d3js.org/getting-started
+
+https://medium.com/@john.goodman/getting-started-with-d3-js-6de226320878
+
+
+
+
+
+
+October 11th.
+
+October 18 - 25th two physics conferences.
+
+3 developers.
+
+The animation test. look at the code, see who it works.
+
+
+* Justin> Worldline Records
+
+* Dr. Bennett - Share a couple pages to read on Worldlines.
+
+* Taylor> Email Brandon get him up to speed.
+
+
+Making progress towards running some new code: step would be 
+
+- Build a Spacetime diagram or a Superhighway and build it in d3.
+
+
+
+
+
+
+
