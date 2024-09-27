@@ -45,10 +45,10 @@ jobs:
       with:
         run: mvn -B package --file pom.xml
     - run: |
-        mkdir packaged-jar && cp target/*.jar packaged-jar/
+        mkdir packaged-jar && cp target/*-dependencies.jar packaged-jar/
     - uses: actions/upload-artifact@v4
       with:
-        name: Package
+        name: SpacetimeJava
         path: packaged-jar
 
     # Optional: Uploads the full dependency graph to GitHub to improve the quality of Dependabot alerts this repository can receive
