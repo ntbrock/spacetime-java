@@ -3,8 +3,9 @@
 
 # 2024-09-27 Brockman - Additional X11 Xvfb settings to enable JUnit Tests that display Swing Java UI
 # https://github.com/coactions/setup-xvfb
+# Upload Artifact Documentation https://docs.github.com/en/actions/use-cases-and-examples/building-and-testing/building-and-testing-java-with-maven
 
-name: Java CI with Maven
+name: Java CI with Maven and X11
 
 on:
   push:
@@ -43,6 +44,12 @@ jobs:
       uses: coactions/setup-xvfb@v1
       with:
         run: mvn -B package --file pom.xml
+    - run: |
+        mkdir packaged-jar && cp target*.jar packaged-jar/
+    - uses: actions/upload-artifact@v4
+      with:
+        name: Package
+        path: packaged-jar
 
     # Optional: Uploads the full dependency graph to GitHub to improve the quality of Dependabot alerts this repository can receive
     #- name: Update dependency graph
