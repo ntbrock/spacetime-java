@@ -2,6 +2,7 @@
 # For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-java-with-maven
 
 # 2024-09-27 Brockman - Additional X11 Xvfb settings to enable JUnit Tests that display Swing Java UI
+# https://github.com/coactions/setup-xvfb
 
 name: Java CI with Maven
 
@@ -24,7 +25,8 @@ jobs:
           cache: maven
       - name: Build with Maven and X11
         uses: coactions/setup-xvfb@v1
-        run: mvn clean compile test --file pom.xml
+        with:
+          run: mvn clean compile test --file pom.xml
 
   package:
     needs: test
@@ -39,7 +41,8 @@ jobs:
         cache: maven
     - name: Build with Maven and X11
       uses: coactions/setup-xvfb@v1
-      run: mvn -B package --file pom.xml
+      with:
+        run: mvn -B package --file pom.xml
 
     # Optional: Uploads the full dependency graph to GitHub to improve the quality of Dependabot alerts this repository can receive
     #- name: Update dependency graph
