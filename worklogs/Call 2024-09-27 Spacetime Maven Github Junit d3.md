@@ -1,7 +1,39 @@
 Call 2024-09-27 Spacetime Maven Github JUnit d3
 
+## Next Actions 9/27
 
-## Next Actions
+* Justin> Review the Spacetime Calculations called Worldline Records.  Start with code in src/test/java/spacetime/ScenarioLoadFromFileTest, lines 128 - 130 where the Java calculations are called.
+
+* Dr. Bennett> Share pages to read on Worldlines. Continue to think about the Screenshots being embedded in the Course Material.
+
+* Taylor> Email Brandon get him up to speed.
+
+* Brandon> Git Pull, Run the example and spacetime Unit Tests in IntelliJ.
+
+
+## Next Meetings
+
+- October 4: No Meeting, Fall Break
+
+- October 11th: Full Team
+
+- October 18: Developers, Dr. Bennett will be at a physics conference.
+
+- October 25: No Meeting, Dr. Bennett Physics, Taylor Alumni Weekend,.
+
+
+Roadmap: Making progress towards running some new code. Milestones:
+
+- Build a Spacetime diagram or a Superhighway and build it in d3.  Considerations are Axes, Animations, and which objects are shown.
+
+- Build a step-wise calculator in Javascript/Typescript that calculates t, x, and beta for the three trip to alpha clocks.  It's output should match the Spacetime Java csv output.
+
+
+
+
+
+
+## Next Actions 9/20
  
 * Dr. Bennett> Consider Adding Spacetime diagrams into the Trainground Lab 1 + 2  Google Docs
 
@@ -27,13 +59,20 @@ Reference: https://symflower.com/en/company/blog/2023/how-to-write-junit-test-ca
 ```sh
 mvn clean compile test
 ```
+- Github Actions, Artifact Download
 
 - Example JUnit Test: TriangleTest 
 
-- Spacetime JUnit Test: ScenarioLoadFromFileTest
+- Spacetime JUnit Test: ScenarioLoadFromFileTest and the CSV Output Test.
 
-- Github Actions, Artifact Download
 
+	Assume SpaceTime java is correct.
+
+	Build Spacetime Web -> 1. Build the mathematrics,    2. Build the Trip to Alpha Scenario.
+
+	3. OUtput a CSV file at all values of all animation steps.
+
+	4. Compare Spacetime java csv -vs- Spacetime web csv, they should match!
 
 
 
@@ -65,5 +104,34 @@ else if (key == KeyEvent.VK_UP) {  // shift time one step forward
             try{
 
 3. Designed a Csv Output Model
+
+
+## Next Actions
+
+* Justin> Review the Spacetime Calculations called Worldline Records.  Start with code in src/test/java/spacetime/ScenarioLoadFromFileTest, lines 128 - 130 where the Java calculations are called.
+
+* Dr. Bennett> Share pages to read on Worldlines. Continue to think about the Screenshots being embedded in the Course Material.
+
+* Taylor> Email Brandon get him up to speed.
+
+* Brandon> Git Pull, Run the example and spacetime Unit Tests in IntelliJ.
+
+
+## Next Meetings:
+
+- October 11th: Full Team
+
+- October 18: Developers, Dr. Bennett will be at a physics conference.
+
+- October 25: No Meeting, Dr. Bennett Physics, Taylor Alumni Weekend,.
+
+
+Roadmap: Making progress towards running some new code. Milestones:
+
+- Build a Spacetime diagram or a Superhighway and build it in d3.  Considerations are Axes, Animations, and which objects are shown.
+
+- Build a step-wise calculator in Javascript/Typescript that calculates t, x, and beta for the three trip to alpha clocks.  It's output should match the Spacetime Java csv output.
+
+
 
 
