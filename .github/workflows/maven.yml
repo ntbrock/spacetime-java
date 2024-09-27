@@ -22,10 +22,9 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
           cache: maven
-      - name: Build with Maven
-        run: |
-          export DISPLAY=:99
-          sudo Xvfb -ac :99 -screen 0 1280x1024x24 > /dev/null 2>&1 & mvn clean compile test --file pom.xml
+      - name: Build with Maven and X11
+        uses: coactions/setup-xvfb@v1
+        run: mvn clean compile test --file pom.xml
 
   package:
     needs: test
@@ -38,7 +37,8 @@ jobs:
         java-version: '17'
         distribution: 'temurin'
         cache: maven
-    - name: Build with Maven
+    - name: Build with Maven and X11
+      uses: coactions/setup-xvfb@v1
       run: mvn -B package --file pom.xml
 
     # Optional: Uploads the full dependency graph to GitHub to improve the quality of Dependabot alerts this repository can receive

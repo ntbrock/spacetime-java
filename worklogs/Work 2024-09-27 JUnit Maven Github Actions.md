@@ -29,4 +29,11 @@ https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/m
 https://docs.github.com/en/actions/writing-workflows/workflow-syntax-for-github-actions#jobsjob_idneeds
 
 
+1148. Github X11 Swing Build
+
+Error:    ScenarioLoadFromFileTest.loadScenarioTripToAlpha:29 » Headless 
+No X11 DISPLAY variable was set,
+but this program performed an operation which requires it.
+
+https://github.com/coactions/setup-xvfb
 
