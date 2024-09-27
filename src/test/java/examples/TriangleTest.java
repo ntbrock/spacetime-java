@@ -4,6 +4,10 @@ package examples;
 import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * 2024-09-27 Brockman - Implemented the Standard Example of a JUnit Test
+ */
+
 public class TriangleTest {
     @Test
     public void isValidNegativeSide() {
@@ -13,4 +17,11 @@ public class TriangleTest {
 
         assertEquals(expected, actual);
     }
+
+    @Test
+    public void isValidLargeTriangle() {
+        Triangle t = new Triangle(1000, 2000, 3000);
+        assertEquals(t.isValid() , true);
+    }
+
 }
