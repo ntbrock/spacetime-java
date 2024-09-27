@@ -1,4 +1,6 @@
 // Reference: https://d3js.org/getting-started
+// Reference: https://medium.com/@john.goodman/getting-started-with-d3-js-6de226320878
+
 // Declare the chart dimensions and margins.
 const width = 640;
 const height = 400;
@@ -31,6 +33,30 @@ svg.append("g")
 svg.append("g")
     .attr("transform", `translate(${marginLeft},0)`)
     .call(d3.axisLeft(y));
+
+
+// 2024-09-27 Brockman - Customization to add a few demonstraiton points
+
+var points = [
+    { date: new Date("2023-07-15"), amount : 24 },
+    { date: new Date("2023-10-15"), amount : 49 },
+    { date: new Date("2023-03-15"), amount : 15 },
+    { date: new Date("2023-01-15"), amount : 88 },
+];
+
+svg.append("g")
+    .selectAll("dot")
+    .data(points)
+    .join("circle")
+    .attr("cx", function (d) { return x(d.date); })
+    .attr("cy", function (d) { return y(d.amount); })
+    .attr("r", 6.0 )
+    .style("fill", "#6943a2");
+
+points.forEach(function(d) {
+    console.log("Point: ", d);
+});
+
 
 // Append the SVG element.
 container.append(svg.node());
