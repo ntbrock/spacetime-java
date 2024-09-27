@@ -37,3 +37,16 @@ but this program performed an operation which requires it.
 
 https://github.com/coactions/setup-xvfb
 
+
+1153. Maven Package
+
+1203. Artifact Download
+
+Artifact Package has been successfully uploaded! Final size is 430686 bytes. Artifact ID is 1988280233
+Artifact download URL: https://github.com/ntbrock/spacetime-java/actions/runs/11073891159/artifacts/1988280233
+
+
+
+Action environment variables
+https://docs.github.com/en/actions/writing-workflows/choosing-what-your-workflow-does/accessing-contextual-information-about-workflow-runs#job-context
+
