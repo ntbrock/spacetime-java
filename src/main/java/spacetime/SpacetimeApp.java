@@ -18,6 +18,7 @@ import java.awt.event.WindowEvent;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
+import java.nio.file.Path;
 import java.text.DateFormat;
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
@@ -90,7 +91,9 @@ public class SpacetimeApp extends JFrame implements ActionListener, KeyListener,
   Locale defaultLocale = Locale.getDefault();
   //Locale defaultLocale = new Locale("sk", "SK");
   Locale enLocale = new Locale("en", "US");
-  ResourceBundle bundle = ResourceBundle.getBundle("resources/i18n/SpacetimeBundle", defaultLocale);
+
+  // 2024-09-27 - Relocated the resources path for Maven build.
+  ResourceBundle bundle = ResourceBundle.getBundle( "i18n" + File.separator + "SpacetimeBundle", defaultLocale);
   
   //Create a file chooser
   JFileChooser fileChooser;
@@ -446,7 +449,8 @@ public class SpacetimeApp extends JFrame implements ActionListener, KeyListener,
 
   protected JMenuItem makeMenuItem(String imageName, String actionCommand, String toolTipText, String altText) {
     //Look for the image.
-    String imgLocation = "/resources/images/"+ imageName+ ".png";
+    // 2024-09-27 - Relocated the resources path for Maven build.
+    String imgLocation = "/images/"+ imageName+ ".png";
     URL imageURL = SpacetimeApp.class.getResource(imgLocation);
 
     //Create and initialize the button.
@@ -472,7 +476,8 @@ public class SpacetimeApp extends JFrame implements ActionListener, KeyListener,
   
   protected JButton makeButton(String imageName, String actionCommand, String toolTipText, String altText) {
     //Look for the image.
-    String imgLocation = "/resources/images/"+ imageName+ ".png";
+    // 2024-09-27 - Relocated the resources path for Maven build.
+    String imgLocation = "/images/"+ imageName+ ".png";
     URL imageURL = SpacetimeApp.class.getResource(imgLocation);
 
     //Create and initialize the button.

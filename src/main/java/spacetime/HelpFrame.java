@@ -25,7 +25,8 @@ public class HelpFrame extends JFrame implements HyperlinkListener{
   public HelpFrame(SpacetimeApp app){
     this.app = app;
     String loc = app.defaultLocale.toString();
-    helpURL = SpacetimeApp.class.getResource("/resources/html/index_".concat(loc).concat(".html"));
+    // 2024-09-27 - Relocated the resources path for Maven build.
+    helpURL = SpacetimeApp.class.getResource("/html/index_".concat(loc).concat(".html"));
     editorPane = new JEditorPane();
     editorPane.setEditable(false);
     editorPane.addHyperlinkListener(this);
@@ -36,7 +37,8 @@ public class HelpFrame extends JFrame implements HyperlinkListener{
       System.err.println("Attempted to read a bad URL. Reading English Help instead.");
       
       try{
-        editorPane.setPage(SpacetimeApp.class.getResource("/resources/html/index_en_US.html"));
+        // 2024-09-27 - Relocated the resources path for Maven build.
+        editorPane.setPage(SpacetimeApp.class.getResource("/html/index_en_US.html"));
       }
       catch(IOException ee){
         System.err.println("English Help not found . . .");
