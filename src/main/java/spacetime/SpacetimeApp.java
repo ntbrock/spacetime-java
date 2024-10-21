@@ -955,6 +955,7 @@ public class SpacetimeApp extends JFrame implements ActionListener, KeyListener,
       }
       else {
         double deltaBetap=0.1;
+        // Velocity Addition Formula  https://en.wikipedia.org/wiki/Velocity-addition_formula
         double newBetaRel = (sc.getBetaRel()+deltaBetap)/(1+sc.getBetaRel()*deltaBetap);
         sc.setBetaRel(newBetaRel);
         repaint();
