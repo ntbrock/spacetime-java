@@ -1,5 +1,22 @@
 Call 2024-10-21 Coordinate System Translations
 
+
+## Pair Session - Taylor & Justin
+
+1. Matched and Added Comments to the Java code to the "Modern Physics" Equations (numbered) to give insight.
+
+2. Code Review to better understand the Beta Change Events and the Graphical Drawing of Worldlines, Segments
+
+3. Demo2 of d3.js of drawing Worldlines.
+
+* Dr. Bennett - reading on Velocity Additions physics definitions and Beta Changes.
+
+
+
+Taylor start an email thread.
+
+
+
 ## Agenda
 
 * Dr. Bennett > Mathematics of Lorentz translations
@@ -11,6 +28,7 @@ Call 2024-10-21 Coordinate System Translations
 
 * Taylor> Graphical Coordinate Systems Discussion
 
+* Taylor> Project Goal Idea
 
 ---
 # Details
@@ -67,11 +85,52 @@ Squeeze rotations.
   }
 ```
 
+Matches the formula in the PDF: 
+
+Spacetime App :950 -> key == KLevent.VK_UP
+
+Help Menu:
+Transform to a frame moving w/ positive relative velocity w/rt to a current frame.
+Jumping to a different reference frame.
+
+Transforming is just manipulating the beta by 0.1
+Justin> Velocity addition formula 
+
+beta = v / c
+
+line 959 Velocity addition formula.
+
+line 22: Public class Scenario , line 22: only 1 beta for the entire scenario, but it may change.
+
+DrawingPanelDiagram :235 - Where it's drawing wordlines onto the screen.
+
+class Segment line :681 
+
+WorldlineRecord :15 - setXpTpBetapOldNew
+
+Line 17-19: Implementation of Einsteins 2nd postulate.
+Line 21-22: Implementation of Einsteins 2nd postulate.
+
+These are the velocity addition formulas.
+
+
+* Dr. Bennett - Learning about velocity addition in special relativity. Addition of vectors has to take into account the speed of light, based in the Lorentz transofrmation.
+
+
+
+---
+
 Jumped out to reference : STObject.java, LIne 422 addWorldlineRecord:
 
 Line 602:       STEvent ev = new STBetaChangeEvent(sc, this, tp);
 
 Jumped to ST Beta Change Event.java line 28:   public void drawInHighway(Graphics2D g2){
+
+STObject :493,   STEvent ev = new STBetaChangeEvent(sc, this, ttp);
+
+
++F> Better undertstand what the BEta Change Events are.
+
 
 Java 2D Api Overview: https://docs.oracle.com/javase/8/docs/technotes/guides/2d/spec/j2d-intro.html
 
@@ -130,4 +189,11 @@ SVG (d3.js) Coordinate systems:
 https://benclinkinbeard.com/d3tips/understanding-svg-coordinate-space/
 
 In SVG (and canvas, etc.), 0,0 is the top left corner. X values increase as they move to the right and Y values increase as they move down.
+
+
+
+
+## Project Goal Idea: Acceleration
+
+A user interface or documentation that helps the next developers learn the physics more quickly.
 
