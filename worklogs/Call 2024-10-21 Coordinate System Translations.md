@@ -1,19 +1,37 @@
 Call 2024-10-21 Coordinate System Translations
 
 
+# Taylor start an email thread.
+
+
+* Dr. Bennett - Can you provide reading on Velocity Additions physics definitions and Beta Changes?
+
+Reference, Wikipedia: https://en.wikipedia.org/wiki/Velocity-addition_formula#Special_relativity
+
+* All - What would be a convenient next meeting time?
+
+Monday 10/28 @ 4:00 PM?
+
+Friday 11/1 @ 2:00 PM? (NCSSM Extended Weekend)
+
+Monday 11/4 @ 4:00 PM?
+
+Friday 11/8 @ 2:00 PM? (Taylor Camping Weekend, Zoom from a highway stop)
+
+
+
 ## Pair Session - Taylor & Justin
 
-1. Matched and Added Comments to the Java code to the "Modern Physics" Equations (numbered) to give insight.
+1. Code Review to better understand the Beta Change Events and the Graphical Drawing of Worldlines, Segments
 
-2. Code Review to better understand the Beta Change Events and the Graphical Drawing of Worldlines, Segments
+2. Matched and Added Comments to the Java code to the "Modern Physics" Equations (numbered) to give insight.
+
+https://github.com/ntbrock/spacetime-java/commit/e87831ffdae85a6bd51b56652bdbfd1cf555ebe2
 
 3. Demo2 of d3.js of drawing Worldlines.
 
-* Dr. Bennett - reading on Velocity Additions physics definitions and Beta Changes.
+https://github.com/ntbrock/spacetime-java/commit/d369ec526fb27e7e6c9fe9db1c35c49927a7dbaf
 
-
-
-Taylor start an email thread.
 
 
 
