@@ -76,7 +76,6 @@ The slope of the worldlines of c remains unchanged.
 
 Possible for all speeds to change except 1.
 
-
 Squeeze rotations.
 
 1sec vertical tick
