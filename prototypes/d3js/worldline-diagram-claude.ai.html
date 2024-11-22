@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+  <style>
+    .world-line {
+      fill: none;
+      stroke-width: 2;
+    }
+    .light-cone {
+      fill: none;
+      stroke: #ffeb3b;
+      stroke-width: 1;
+      stroke-dasharray: 4;
+    }
+    .grid-line {
+      stroke: #ddd;
+      stroke-width: 0.5;
+    }
+    .axis-label {
+      font-size: 12px;
+    }
+    .event-point {
+      fill: #ff4081;
+    }
+    .slider-container {
+      margin: 20px;
+    }
+    .slider-label {
+      display: inline-block;
+      width: 150px;
+    }
+  </style>
+</head>
+<body>
+  <div class="slider-container">
+    <label class="slider-label">Velocity (β = v/c):</label>
+    <input type="range" id="velocitySlider" min="0" max="99" value="60" />
+    <span id="velocityValue">0.60c</span>
+  </div>
+  <div id="graph"></div>
+
+  <script>
+    // Set up dimensions and margins
+    const margin = {top: 40, right: 60, bottom: 60, left: 60};
+    const width = 800 - margin.left - margin.right;
+    const height = 600 - margin.top - margin.bottom;
+
+    // Create SVG container
+    const svg = d3.select("#graph")
+      .append("svg")
+        .attr("width", width + margin.left + margin.right)
+        .attr("height", height + margin.top + margin.bottom)
+      .append("g")
+        .attr("transform", `translate(${margin.left},${margin.top})`);
+
+    // Set up scales
+    const x = d3.scaleLinear()
+      .domain([-4, 4])
+      .range([0, width]);
+
+    const y = d3.scaleLinear()
+      .domain([-1, 7])
+      .range([height, 0]);
+
+    // Add grid
+    function drawGrid() {
+      // Vertical grid lines
+      svg.selectAll(".vertical-grid")
+        .data(d3.range(-4, 4.1, 1))
+        .join("line")
+        .attr("class", "grid-line")
+        .attr("x1", d => x(d))
+        .attr("x2", d => x(d))
+        .attr("y1", y(-1))
+        .attr("y2", y(7));
+
+      // Horizontal grid lines
+      svg.selectAll(".horizontal-grid")
+        .data(d3.range(-1, 7.1, 1))
+        .join("line")
+        .attr("class", "grid-line")
+        .attr("x1", x(-4))
+        .attr("x2", x(4))
+        .attr("y1", d => y(d))
+        .attr("y2", d => y(d));
+    }
+
+    // Draw axes
+    svg.append("g")
+      .attr("transform", `translate(0,${y(0)})`)
+      .call(d3.axisBottom(x).ticks(8))
+      .append("text")
+        .attr("class", "axis-label")
+        .attr("x", width/2)
+        .attr("y", 40)
+        .style("text-anchor", "middle")
+        .text("Distance (x)");
+
+    svg.append("g")
+      .attr("transform", `translate(${x(0)},0)`)
+      .call(d3.axisLeft(y).ticks(8))
+      .append("text")
+        .attr("class", "axis-label")
+        .attr("transform", "rotate(-90)")
+        .attr("y", -40)
+        .attr("x", -height/2)
+        .style("text-anchor", "middle")
+        .text("Time (ct)");
+
+    // Draw light cone
+    function drawLightCone() {
+      // Forward light cone
+      svg.append("line")
+        .attr("class", "light-cone")
+        .attr("x1", x(0))
+        .attr("y1", y(0))
+        .attr("x2", x(4))
+        .attr("y2", y(4));
+
+      svg.append("line")
+        .attr("class", "light-cone")
+        .attr("x1", x(0))
+        .attr("y1", y(0))
+        .attr("x2", x(-4))
+        .attr("y2", y(4));
+    }
+
+    // Function to draw world lines
+    function drawWorldLines(beta) {
+      // Clear previous world lines
+      svg.selectAll(".world-line").remove();
+      
+      // Calculate gamma factor
+      const gamma = 1 / Math.sqrt(1 - beta * beta);
+      
+      // Stationary object world line
+      svg.append("line")
+        .attr("class", "world-line")
+        .style("stroke", "#2196f3")
+        .attr("x1", x(0))
+        .attr("y1", y(0))
+        .attr("x2", x(0))
+        .attr("y2", y(6));
+
+      // Moving object world line
+      const movingLine = d3.line()
+        .x(t => x(beta * t))
+        .y(t => y(t));
+
+      svg.append("path")
+        .datum(d3.range(0, 6, 0.1))
+        .attr("class", "world-line")
+        .style("stroke", "#f44336")
+        .attr("d", movingLine);
+
+      // Add proper time markers
+      const properTimePoints = d3.range(0, 6, 1);
+      
+      svg.selectAll(".proper-time-stationary")
+        .data(properTimePoints)
+        .join("circle")
+        .attr("class", "event-point")
+        .attr("cx", x(0))
+        .attr("cy", t => y(t))
+        .attr("r", 3);
+
+      svg.selectAll(".proper-time-moving")
+        .data(properTimePoints)
+        .join("circle")
+        .attr("class", "event-point")
+        .attr("cx", t => x(beta * t))
+        .attr("cy", t => y(t))
+        .attr("r", 3);
+    }
+
+    // Initialize the visualization
+    drawGrid();
+    drawLightCone();
+    drawWorldLines(0.6);
+
+    // Add interactivity
+    d3.select("#velocitySlider").on("input", function() {
+      const beta = this.value / 100;
+      d3.select("#velocityValue").text(beta.toFixed(2) + "c");
+      drawWorldLines(beta);
+    });
+
+    // Add title
+    svg.append("text")
+      .attr("x", width/2)
+      .attr("y", -10)
+      .style("text-anchor", "middle")
+      .style("font-size", "16px")
+      .text("Spacetime Diagram (World Lines)");
+
+    // Add legend
+    const legend = svg.append("g")
+      .attr("transform", `translate(${width - 150}, 20)`);
+
+    legend.append("line")
+      .style("stroke", "#2196f3")
+      .style("stroke-width", 2)
+      .attr("x1", 0)
+      .attr("y1", 0)
+      .attr("x2", 20)
+      .attr("y2", 0);
+
+    legend.append("text")
+      .attr("x", 25)
+      .attr("y", 4)
+      .text("Stationary Object");
+
+    legend.append("line")
+      .style("stroke", "#f44336")
+      .style("stroke-width", 2)
+      .attr("x1", 0)
+      .attr("y1", 20)
+      .attr("x2", 20)
+      .attr("y2", 20);
+
+    legend.append("text")
+      .attr("x", 25)
+      .attr("y", 24)
+      .text("Moving Object");
+
+    legend.append("line")
+      .style("stroke", "#ffeb3b")
+      .style("stroke-width", 1)
+      .style("stroke-dasharray", "4")
+      .attr("x1", 0)
+      .attr("y1", 40)
+      .attr("x2", 20)
+      .attr("y2", 40);
+
+    legend.append("text")
+      .attr("x", 25)
+      .attr("y", 44)
+      .text("Light Cone");
+  </script>
+</body>
+</html>
